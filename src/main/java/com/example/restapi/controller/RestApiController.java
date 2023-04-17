@@ -1,12 +1,10 @@
 package com.example.restapi.controller;
 
 import com.example.restapi.model.BookQueryParma;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-@Slf4j
-@RequestMapping("/api")
 @RestController
+@RequestMapping("/api")
 public class RestApiController {
 
     @GetMapping(path = "/hello")
@@ -61,10 +59,28 @@ public class RestApiController {
         System.out.println("num1 * num2 = " + num1 * num2);
     }
 
-    @DeleteMapping(path = {"/user/{username}/delete", "/user/{username}/del"})
-    public void delete(
-            @PathVariable String username
-    ) {
-        log.info("username={}", username);
-    }
+
+//    @GetMapping("/echo1/{number}")
+//    public Integer echo(
+//            @PathVariable Integer number
+//    ) {
+//        System.out.println("echo message = " + number);
+//
+//        // String 타입의 변수 외에 다른 타입 받아보기
+//        // Integer, Boolean
+//
+//        return number;
+//    }
+//
+//    @GetMapping("/echo2/{trueFalse}")
+//    public Boolean echo(
+//            @PathVariable Boolean trueFalse
+//    ) {
+//        System.out.println("echo message = " + trueFalse);
+//
+//        // String 타입의 변수 외에 다른 타입 받아보기
+//        // Integer, Boolean
+//
+//        return trueFalse;
+//    }
 }
