@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
-@RestControllerAdvice
+@RestControllerAdvice(basePackages = "com.example.exception.controller")
+
 public class RestApiExceptionHandler {
 
     @ExceptionHandler(value = {Exception.class})
