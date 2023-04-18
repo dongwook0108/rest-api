@@ -1,13 +1,13 @@
 package com.example.validation.model;
 
 import com.example.validation.annotation.PhoneNumber;
+import com.example.validation.annotation.YearMonth;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -44,6 +44,9 @@ public class UserRegisterRequest {
 
     @FutureOrPresent
     private LocalDateTime registerAt;
+
+    @YearMonth(pattern = "yyyy-MM")
+    private String birthdayYearMonth;
 
     @AssertTrue(message = "name or nickname 은 존재 해여합니다")
     public boolean isNameCheck() {

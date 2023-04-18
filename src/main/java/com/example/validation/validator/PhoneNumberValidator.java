@@ -18,7 +18,6 @@ public class PhoneNumberValidator implements ConstraintValidator<PhoneNumber, St
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        boolean result = Pattern.matches(value, regexp);
-        return result;
+        return Pattern.matches(regexp, value);
     }
 }
