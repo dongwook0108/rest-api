@@ -2,9 +2,7 @@ package com.example.demo.user.controller;
 
 import com.example.demo.user.model.UserEntity;
 import com.example.demo.user.service.UserService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +37,11 @@ public class UserApiController {
     @GetMapping("/find/{id}")
     public UserEntity findOne(@PathVariable Long id) {
         return userService.findOne(id);
+    }
+
+    @GetMapping("/score")
+    public List<UserEntity> filterScore(@RequestParam int score) {
+        return userService.filterScore(score);
     }
 
 

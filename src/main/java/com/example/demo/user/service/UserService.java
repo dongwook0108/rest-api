@@ -12,6 +12,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+
     public UserEntity save(UserEntity user) {
         //save
         return userRepository.save(user);
@@ -28,4 +29,10 @@ public class UserService {
     public UserEntity findOne(Long id) {
         return userRepository.findById(id).get();
     }
+
+    public List<UserEntity> filterScore(int score) {
+        return userRepository.findScoreGreaterThan(score);
+    }
+
+
 }
