@@ -30,7 +30,17 @@ public class UserApiController {
     }
 
     // delete
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
+        userService.delete(id);
+    }
 
     // findById -> path variable
+    @GetMapping("/find/{id}")
+    public UserEntity findOne(@PathVariable Long id) {
+        return userService.findOne(id);
+    }
+
+
 
 }

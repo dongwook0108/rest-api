@@ -20,4 +20,12 @@ public class UserService {
     public List<UserEntity> findAll() {
         return userRepository.findAll();
     }
+
+    public void delete(Long id) {
+        userRepository.delete(id);
+    }
+
+    public UserEntity findOne(Long id) {
+        return userRepository.findById(id).get();
+    }
 }
