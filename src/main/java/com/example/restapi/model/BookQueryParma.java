@@ -18,4 +18,6 @@ public class BookQueryParma {
 
     private String issuedDay;
 
+    private String testAfterRename;
+
 }
